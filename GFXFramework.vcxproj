@@ -746,6 +746,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\proiecte-pga\src\utils\window_utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="src\lab\lab06\shaders\TransparentShader.FS.glsl" />
     <None Include="src\lab\proiect3v2\shaders\OceanCompute.comp.glsl" />
   </ItemGroup>
   <ItemGroup>

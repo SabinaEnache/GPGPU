@@ -14,12 +14,30 @@ using namespace lab;
 
 GPGPU::GPGPU()
 {
-
 }
 
 
 GPGPU::~GPGPU()
 {
+}
+
+void GPGPU::DrawQuad() 
+{
+    vector<VertexFormat> quadVertices
+    {
+        VertexFormat(glm::vec3(-10, -10, 0.0), glm::vec3(0.7,0.8,0.96)),
+        VertexFormat(glm::vec3(10, -10, 0.0), glm::vec3(0.7,0.8,0.96)),
+        VertexFormat(glm::vec3(-10, 10, 0.0), glm::vec3(0.7,0.8,0.96)),
+        VertexFormat(glm::vec3(10, 10, 0.0), glm::vec3(0.7,0.8,0.96))
+    };
+
+    vector<unsigned int> quadIndices
+    {
+        0, 1, 2,
+        1, 3, 2
+    };
+
+    CreateMesh("quad", quadVertices, quadIndices);
 }
 
 void GPGPU::DrawCube() 
@@ -185,6 +203,7 @@ void GPGPU::DrawCylinder()
 
 void GPGPU::Init()
 {
+
     // Create a shader program 
     {
         Shader* shader = new Shader("LabShader");
@@ -193,11 +212,21 @@ void GPGPU::Init()
         shader->CreateAndLink();
         shaders[shader->GetName()] = shader;
     }
+    {
+        Shader* shader = new Shader("TransparentShader");
+        shader->AddShader(PATH_JOIN(window->props.selfDir, "src/lab", "Lab06", "shaders", "LabShader.VS.glsl"), GL_VERTEX_SHADER);
+        shader->AddShader(PATH_JOIN(window->props.selfDir, "src/lab", "Lab06", "shaders", "TransparentShader.FS.glsl"), GL_FRAGMENT_SHADER);
+        shader->CreateAndLink();
+        shaders[shader->GetName()] = shader;
+    }
 
+    DrawQuad();
     DrawCube();
     DrawSphere();
     DrawCylinder();
+
 }
+
 Texture2D* GPGPU::LoadTexture(const char* imagePath)
 {
     int width, height, channels;
@@ -329,9 +358,8 @@ void GPGPU::FrameStart()
 }
 
 void GPGPU::Update(float deltaTimeSeconds)
-{
-    
-    glm::mat4 model = glm::mat4(1);
+
+{   glm::mat4 model = glm::mat4(1);
     model = glm::translate(model, glm::vec3(-2, 1, 0));
     RenderSimpleMesh(meshes["cube"], shaders["LabShader"], model, glm::vec3(1));
    
@@ -342,6 +370,43 @@ void GPGPU::Update(float deltaTimeSeconds)
     model = glm::mat4(1);
     model = glm::translate(model, glm::vec3(2, 1, 0));
     RenderSimpleMesh(meshes["cylinder"], shaders["LabShader"], model, glm::vec3(1));
+
+    //cub
+    {
+        //spate
+        //glm::mat4 spate = glm::mat4(1);
+        //spate = glm::translate(spate, glm::vec3(0, 0, -10));
+        //RenderSimpleMesh(meshes["quad"], shaders["TransparentShader"], spate, glm::vec3(1));
+
+        //stanga
+        glm::mat4 stanga = glm::mat4(1);
+        stanga = glm::translate(stanga, glm::vec3(-10, 0, 0));
+        stanga = glm::rotate(stanga, glm::radians(90.0f), glm::vec3(0,1,0));
+        RenderSimpleMesh(meshes["quad"], shaders["TransparentShader"], stanga, glm::vec3(1));
+
+        //dreapta
+        glm::mat4 dreapta = glm::mat4(1);
+        dreapta = glm::translate(dreapta, glm::vec3(10, 0, 0));
+        dreapta = glm::rotate(dreapta, glm::radians(90.0f), glm::vec3(0,1,0));
+        RenderSimpleMesh(meshes["quad"], shaders["TransparentShader"], dreapta, glm::vec3(1));
+
+        //sus
+        glm::mat4 sus = glm::mat4(1);
+        sus = glm::translate(sus, glm::vec3(0, 10, 0));
+        sus = glm::rotate(sus, glm::radians(90.0f), glm::vec3(1, 0, 0));
+        RenderSimpleMesh(meshes["quad"], shaders["TransparentShader"], sus, glm::vec3(1));
+
+        //jos
+        glm::mat4 jos = glm::mat4(1);
+        jos = glm::translate(jos, glm::vec3(0, -10, 0));
+        jos = glm::rotate(jos, glm::radians(90.0f), glm::vec3(1, 0, 0));
+        RenderSimpleMesh(meshes["quad"], shaders["TransparentShader"], jos, glm::vec3(1));
+
+        //fata
+        glm::mat4 fata = glm::mat4(1);
+        fata = glm::translate(fata, glm::vec3(0, 0, 10));
+        RenderSimpleMesh(meshes["quad"], shaders["TransparentShader"], fata, glm::vec3(1));
+    }
 }
 
 
@@ -357,6 +422,9 @@ void GPGPU::RenderSimpleMesh(Mesh* mesh, Shader* shader, const glm::mat4& model,
 
     // Render an object using the specified shader and the specified position
     glUseProgram(shader->program);
+
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     glm::vec3 eye_position = GetSceneCamera()->m_transform->GetWorldPosition();
     // TODO(student): Set eye position (camera position) uniform

@@ -1,3 +1,6 @@
-﻿  GFXFramework.vcxproj -> D:\proiecte-pga\bin\Debug\GFXFramework.exe
+﻿  GPGPU.cpp
+D:\proiecte-pga\src\lab\GPGPU\GPGPU.cpp(87,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\proiecte-pga\src\lab\GPGPU\GPGPU.cpp(93,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  GFXFramework.vcxproj -> D:\proiecte-pga\bin\Debug\GFXFramework.exe
   Junction created for D:\proiecte-pga\bin\Debug\src <<===>> D:\proiecte-pga\src
   Junction created for D:\proiecte-pga\bin\Debug\assets <<===>> D:\proiecte-pga\assets

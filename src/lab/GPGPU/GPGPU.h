@@ -27,6 +27,7 @@ namespace lab
         Texture2D* CreateTexture(unsigned int width, unsigned int height, unsigned int channels, unsigned char* data);
         void CreateFramebuffer(int width, int height);
 
+        void DrawQuad();
         void DrawSphere();
         void DrawCube();
         void DrawCylinder();
@@ -42,16 +43,6 @@ namespace lab
 
         Mesh* CreateMesh(const char* name, const std::vector<VertexFormat>& vertices, const std::vector<unsigned int>& indices);
 
-        gfxc::Camera uiCamera;
-
-        //glm::mat4 projectionMatrix;
-
-        glm::vec3 cameraOffset;
-        glm::vec3 cameraPosition;
-        bool messageShowed;
-
-
-        std::unordered_map<std::string, Texture2D*> mapTextures;
 
         unsigned int framebuffer_object;
         unsigned int color_texture;

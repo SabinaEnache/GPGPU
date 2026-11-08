@@ -1,1 +1,2 @@
 D:\proiecte-pga\bin\Debug\glfw3.dll
+D:\proiecte-pga\GFXFramework.dir\Debug\GFXFrame.300AC89D.Up2Date

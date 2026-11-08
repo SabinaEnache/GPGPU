@@ -604,5 +604,8 @@
     <None Include="src\lab\proiect3v2\shaders\OceanCompute.comp.glsl">
       <Filter>src\lab\proiect3v2\shaders</Filter>
     </None>
+    <None Include="src\lab\lab06\shaders\TransparentShader.FS.glsl">
+      <Filter>src\lab\lab06\shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
