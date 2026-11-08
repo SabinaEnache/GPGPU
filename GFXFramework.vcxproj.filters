@@ -1,0 +1,608 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\proiecte-pga\src\components\camera_input.cpp">
+      <Filter>src\components</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\components\primitives_rendering_scene.cpp">
+      <Filter>src\components</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\components\scene_input.cpp">
+      <Filter>src\components</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\components\simple_scene.cpp">
+      <Filter>src\components</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\components\software_rendering_scene.cpp">
+      <Filter>src\components</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\components\text_renderer.cpp">
+      <Filter>src\components</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\core\engine.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\depth_image.cpp">
+      <Filter>src\core\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\frame_buffer.cpp">
+      <Filter>src\core\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\gpu_buffers.cpp">
+      <Filter>src\core\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\image.cpp">
+      <Filter>src\core\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\mesh.cpp">
+      <Filter>src\core\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\shader.cpp">
+      <Filter>src\core\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\texture2D.cpp">
+      <Filter>src\core\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\core\managers\texture_manager.cpp">
+      <Filter>src\core\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\core\window\input_controller.cpp">
+      <Filter>src\core\window</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\core\window\window_callbacks.cpp">
+      <Filter>src\core\window</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\core\window\window_object.cpp">
+      <Filter>src\core\window</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\core\world.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab01\lab01.cpp">
+      <Filter>src\lab\lab01</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab02\lab02.cpp">
+      <Filter>src\lab\lab02</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab02\triangle_rasterizer.cpp">
+      <Filter>src\lab\lab02</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab03\lab03.cpp">
+      <Filter>src\lab\lab03</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab04\lab04.cpp">
+      <Filter>src\lab\lab04</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab05\lab05.cpp">
+      <Filter>src\lab\lab05</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab06\lab06.cpp">
+      <Filter>src\lab\lab06</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab07\lab07.cpp">
+      <Filter>src\lab\lab07</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab08\lab08.cpp">
+      <Filter>src\lab\lab08</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab09\lab09.cpp">
+      <Filter>src\lab\lab09</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab10\lab10.cpp">
+      <Filter>src\lab\lab10</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab11\lab11.cpp">
+      <Filter>src\lab\lab11</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\proiect1\proiect1.cpp">
+      <Filter>src\lab\proiect1</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\proiect2\proiect2.cpp">
+      <Filter>src\lab\proiect2</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\proiect3\proiect3.cpp">
+      <Filter>src\lab\proiect3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lab\proiect3v2\proiect3v2.cpp">
+      <Filter>src\lab\proiect3v2</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\tema\tema.cpp">
+      <Filter>src\lab\tema</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\utils\gl_utils.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\utils\text_utils.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lab\GPGPU\GPGPU.cpp">
+      <Filter>src\lab\GPGPU</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\Combine.comp.glsl">
+      <Filter>src\lab\proiect3\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\FFT.comp.glsl">
+      <Filter>src\lab\proiect3\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\InitialSpectrum.comp.glsl">
+      <Filter>src\lab\proiect3\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\TimeEvolution.comp.glsl">
+      <Filter>src\lab\proiect3\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\components\camera.h">
+      <Filter>src\components</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\components\camera_input.h">
+      <Filter>src\components</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\components\exports.h">
+      <Filter>src\components</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\components\primitives_rendering_scene.h">
+      <Filter>src\components</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\components\scene_input.h">
+      <Filter>src\components</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\components\simple_scene.h">
+      <Filter>src\components</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\components\software_rendering_scene.h">
+      <Filter>src\components</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\components\text_renderer.h">
+      <Filter>src\components</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\components\transform.h">
+      <Filter>src\components</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\engine.h">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\depth_image.h">
+      <Filter>src\core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\frame_buffer.h">
+      <Filter>src\core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\gpu_buffers.h">
+      <Filter>src\core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\image.h">
+      <Filter>src\core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\mesh.h">
+      <Filter>src\core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\particle_effect.h">
+      <Filter>src\core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\shader.h">
+      <Filter>src\core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\ssbo.h">
+      <Filter>src\core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\texture2D.h">
+      <Filter>src\core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\vertex_format.h">
+      <Filter>src\core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\managers\resource_path.h">
+      <Filter>src\core\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\managers\texture_manager.h">
+      <Filter>src\core\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\window\input_controller.h">
+      <Filter>src\core\window</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\window\window_callbacks.h">
+      <Filter>src\core\window</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\window\window_object.h">
+      <Filter>src\core\window</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\core\world.h">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab01\lab01.h">
+      <Filter>src\lab\lab01</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab02\lab02.h">
+      <Filter>src\lab\lab02</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab02\triangle_rasterizer.h">
+      <Filter>src\lab\lab02</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab03\lab03.h">
+      <Filter>src\lab\lab03</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab03\transform2D.h">
+      <Filter>src\lab\lab03</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab04\lab04.h">
+      <Filter>src\lab\lab04</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab04\transform3D.h">
+      <Filter>src\lab\lab04</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab05\lab05.h">
+      <Filter>src\lab\lab05</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab05\transform3D.h">
+      <Filter>src\lab\lab05</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab06\lab06.h">
+      <Filter>src\lab\lab06</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab06\shaders\LabShader.FS.glsl">
+      <Filter>src\lab\lab06\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab06\shaders\LabShader.VS.glsl">
+      <Filter>src\lab\lab06\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab06\shaders\LastTask.FS.glsl">
+      <Filter>src\lab\lab06\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab06\shaders\LastTask.VS.glsl">
+      <Filter>src\lab\lab06\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab07\lab07.h">
+      <Filter>src\lab\lab07</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab07\shaders\FragmentShader.glsl">
+      <Filter>src\lab\lab07\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab07\shaders\VertexShader.glsl">
+      <Filter>src\lab\lab07\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\lab08.h">
+      <Filter>src\lab\lab08</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Bonus.FS.glsl">
+      <Filter>src\lab\lab08\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Bonus.VS.glsl">
+      <Filter>src\lab\lab08\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Earth.FS.glsl">
+      <Filter>src\lab\lab08\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Earth.VS.glsl">
+      <Filter>src\lab\lab08\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Ground.FS.glsl">
+      <Filter>src\lab\lab08\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Ground.VS.glsl">
+      <Filter>src\lab\lab08\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\LabShader.FS.glsl">
+      <Filter>src\lab\lab08\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\LabShader.VS.glsl">
+      <Filter>src\lab\lab08\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Mix.FS.glsl">
+      <Filter>src\lab\lab08\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Mix.VS.glsl">
+      <Filter>src\lab\lab08\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\lab09.h">
+      <Filter>src\lab\lab09</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ShadowMappingPassOne.FS.glsl">
+      <Filter>src\lab\lab09\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ShadowMappingPassOne.VS.glsl">
+      <Filter>src\lab\lab09\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ShadowMappingPassTwo.FS.glsl">
+      <Filter>src\lab\lab09\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ShadowMappingPassTwo.VS.glsl">
+      <Filter>src\lab\lab09\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ViewColorTexture.FS.glsl">
+      <Filter>src\lab\lab09\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ViewColorTexture.VS.glsl">
+      <Filter>src\lab\lab09\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ViewDepthTexture.FS.glsl">
+      <Filter>src\lab\lab09\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ViewDepthTexture.VS.glsl">
+      <Filter>src\lab\lab09\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\lab10.h">
+      <Filter>src\lab\lab10</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\Color.FS.glsl">
+      <Filter>src\lab\lab10\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\Explosion.GS.glsl">
+      <Filter>src\lab\lab10\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\LabShader.GS.glsl">
+      <Filter>src\lab\lab10\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\Normal.GS.glsl">
+      <Filter>src\lab\lab10\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\Texture.FS.glsl">
+      <Filter>src\lab\lab10\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\Triangle.GS.glsl">
+      <Filter>src\lab\lab10\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\WorldSpace.VS.glsl">
+      <Filter>src\lab\lab10\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab11\lab11.h">
+      <Filter>src\lab\lab11</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab11\shaders\FragmentShader.glsl">
+      <Filter>src\lab\lab11\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab11\shaders\GeometryShader.glsl">
+      <Filter>src\lab\lab11\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab11\shaders\VertexShader.glsl">
+      <Filter>src\lab\lab11\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab_list.h">
+      <Filter>src\lab</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\proiect1.h">
+      <Filter>src\lab\proiect1</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\FragmentShader.glsl">
+      <Filter>src\lab\proiect1\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\NormalMapping.glsl">
+      <Filter>src\lab\proiect1\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\NormalMapping2D.glsl">
+      <Filter>src\lab\proiect1\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\ParallaxMapping.glsl">
+      <Filter>src\lab\proiect1\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\ParallaxMappingv2.glsl">
+      <Filter>src\lab\proiect1\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\ParallaxOcclusionMapping.glsl">
+      <Filter>src\lab\proiect1\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\SteepParallaxMapping.glsl">
+      <Filter>src\lab\proiect1\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\VertexShader.glsl">
+      <Filter>src\lab\proiect1\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\proiect2.h">
+      <Filter>src\lab\proiect2</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\FloorSSR.FS.glsl">
+      <Filter>src\lab\proiect2\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\FloorSSR.VS.glsl">
+      <Filter>src\lab\proiect2\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\FloorSSR_BS.FS.glsl">
+      <Filter>src\lab\proiect2\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\FragmentShader.glsl">
+      <Filter>src\lab\proiect2\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\VertexShader.glsl">
+      <Filter>src\lab\proiect2\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\objects\Box.FS.glsl">
+      <Filter>src\lab\proiect2\shaders\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\objects\Box.VS.glsl">
+      <Filter>src\lab\proiect2\shaders\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\objects\Earth.FS.glsl">
+      <Filter>src\lab\proiect2\shaders\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\objects\Earth.VS.glsl">
+      <Filter>src\lab\proiect2\shaders\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\objects\Floor.FS.glsl">
+      <Filter>src\lab\proiect2\shaders\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\objects\Floor.VS.glsl">
+      <Filter>src\lab\proiect2\shaders\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\proiect3.h">
+      <Filter>src\lab\proiect3</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\FragmentShader.glsl">
+      <Filter>src\lab\proiect3\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\OceanFS.glsl">
+      <Filter>src\lab\proiect3\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\OceanVS.glsl">
+      <Filter>src\lab\proiect3\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\VertexShader.glsl">
+      <Filter>src\lab\proiect3\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lab\proiect3v2\proiect3v2.h">
+      <Filter>src\lab\proiect3v2</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3v2\shaders\FragmentShader.glsl">
+      <Filter>src\lab\proiect3v2\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3v2\shaders\OceanFS.glsl">
+      <Filter>src\lab\proiect3v2\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3v2\shaders\OceanVS.glsl">
+      <Filter>src\lab\proiect3v2\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3v2\shaders\VertexShader.glsl">
+      <Filter>src\lab\proiect3v2\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\tema\shaders\Curvature.VS.glsl">
+      <Filter>src\lab\tema\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\lab\tema\tema.h">
+      <Filter>src\lab\tema</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\utils\gl_utils.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\utils\glm_utils.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\utils\math_utils.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\utils\memory_utils.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\utils\text_utils.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\proiecte-pga\src\utils\window_utils.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lab\GPGPU\GPGPU.h">
+      <Filter>src\lab\GPGPU</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\proiecte-pga\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{F578C869-874A-3ACE-A668-562833138169}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\components">
+      <UniqueIdentifier>{97E7B682-7755-393E-897A-FF4FCBC79ABD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core">
+      <UniqueIdentifier>{36B67915-AC02-3E77-975C-65FA10DD9F0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core\gpu">
+      <UniqueIdentifier>{A0DBFE7C-C65E-340A-A442-E9D7D5231045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core\managers">
+      <UniqueIdentifier>{53EA09F0-501A-3971-824A-03ED227C6FD1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core\window">
+      <UniqueIdentifier>{B4D9D5EE-882C-389A-A7DA-299E4185352F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab">
+      <UniqueIdentifier>{78686BAA-EB82-3629-B010-78F9CF89293D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab01">
+      <UniqueIdentifier>{03ECC2BF-A121-340A-BAA6-34B11251C423}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab02">
+      <UniqueIdentifier>{ACC8A659-D5CC-38D4-A67E-6C06E9129AA8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab03">
+      <UniqueIdentifier>{492806D1-24B9-353D-86C1-63A3E3DD9245}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab04">
+      <UniqueIdentifier>{E101E9EC-A764-3F03-99ED-96D8F39E2914}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab05">
+      <UniqueIdentifier>{B865B218-9899-3D5D-8B58-155877E7346C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab06">
+      <UniqueIdentifier>{C4276FB9-E0EB-3B83-8F43-701E6C18A875}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab06\shaders">
+      <UniqueIdentifier>{FEA65BA6-F316-3C95-B114-CCAB47FDDE6A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab07">
+      <UniqueIdentifier>{08D012B0-E5C9-3CDA-869F-C7675F8B2515}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab07\shaders">
+      <UniqueIdentifier>{E0BF835E-DB50-3183-B65F-E3D4FD04120E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab08">
+      <UniqueIdentifier>{9F491233-8C6C-340B-805B-DF7AF8164198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab08\shaders">
+      <UniqueIdentifier>{0DA8754C-7377-3EEE-A4E2-C96A61F4A90F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab09">
+      <UniqueIdentifier>{BBF4CD7C-5D3A-3501-9535-76A0D4544FC3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab09\shaders">
+      <UniqueIdentifier>{4E99ADBB-B728-3E54-B0D1-DED836BA11F9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab10">
+      <UniqueIdentifier>{88E6DD77-6D60-390A-AF6C-60AEE4F5FA25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab10\shaders">
+      <UniqueIdentifier>{28D23630-6C42-3AC8-8F7F-85C155D7A945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab11">
+      <UniqueIdentifier>{79FCEA4D-59B9-3E61-BC38-3FF33490B983}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\lab11\shaders">
+      <UniqueIdentifier>{ABE0F9DF-A822-33B4-87E7-E93CB4345840}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\proiect1">
+      <UniqueIdentifier>{EB7CE870-60B3-3324-B5E2-BFEBE96262DE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\proiect1\shaders">
+      <UniqueIdentifier>{D31672D4-11A1-3D6F-8671-2044849E1FAC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\proiect2">
+      <UniqueIdentifier>{D8A33F50-E001-330A-9E6A-0F58F946EA63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\proiect2\shaders">
+      <UniqueIdentifier>{2615B91C-A312-3086-B9A3-BA7BE588F373}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\proiect2\shaders\objects">
+      <UniqueIdentifier>{D5153333-F2E9-3B89-8E9D-7DB1B13D78F4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\proiect3">
+      <UniqueIdentifier>{7C69B1CC-242A-37DB-B876-73D137E98D21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\proiect3\shaders">
+      <UniqueIdentifier>{C5A40EB8-A8F3-362B-8A66-11CA6B9DDADA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\proiect3v2">
+      <UniqueIdentifier>{C01D3308-36AE-3D1C-A209-E7969B3B7101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\proiect3v2\shaders">
+      <UniqueIdentifier>{B1DB8342-F5A4-3C23-8609-E9FB7835CB1C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\tema">
+      <UniqueIdentifier>{C54A729A-C126-3A36-B32F-9F75D1603BA7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\tema\shaders">
+      <UniqueIdentifier>{073836AD-F4B9-3559-B0E3-D79ABEB4B743}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{3447627A-69A0-327B-9BF5-DA85886C15A1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lab\GPGPU">
+      <UniqueIdentifier>{e161e3e6-df90-4982-adbe-f11943ceb4fd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\lab\proiect3v2\shaders\OceanCompute.comp.glsl">
+      <Filter>src\lab\proiect3v2\shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

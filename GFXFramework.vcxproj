@@ -1,0 +1,762 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{332274D7-853D-32C1-B04B-88FC5FD4DDEB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>GFXFramework</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\proiecte-pga\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">GFXFramework.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">GFXFramework</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/proiecte-pga</LocalDebuggerWorkingDirectory>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\proiecte-pga\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GFXFramework.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GFXFramework</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/proiecte-pga</LocalDebuggerWorkingDirectory>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\proiecte-pga\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">GFXFramework.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">GFXFramework</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/proiecte-pga</LocalDebuggerWorkingDirectory>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\proiecte-pga\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">GFXFramework.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">GFXFramework</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/proiecte-pga</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\proiecte-pga\deps\api;D:\proiecte-pga\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4458;4189</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ForceConformanceInForLoopScope>
+      </ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>
+      </RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType>
+      </TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;LIBGFXC_EXPORTS;GLM_FORCE_SILENT_WARNINGS;_CRT_SECURE_NO_WARNINGS;SOLVED;DEBUG;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;LIBGFXC_EXPORTS;GLM_FORCE_SILENT_WARNINGS;_CRT_SECURE_NO_WARNINGS;SOLVED;DEBUG;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\proiecte-pga\deps\api;D:\proiecte-pga\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\proiecte-pga\deps\api;D:\proiecte-pga\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/proiecte-pga/deps/prebuilt/GL/x86_64/glew32.dll D:/proiecte-pga/deps/prebuilt/GLFW/x86_64/glfw3.dll D:/proiecte-pga/deps/prebuilt/assimp/x86_64/assimp.dll D:/proiecte-pga/deps/prebuilt/spdlog/x86_64/spdlog.dll D:/proiecte-pga/deps/prebuilt/freetype/x86_64/freetype.dll D:/proiecte-pga/bin/Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+rmdir /S /Q D:\proiecte-pga\bin\Debug\src
+if %errorlevel% neq 0 goto :cmEnd
+mklink /J D:\proiecte-pga\bin\Debug\src D:\proiecte-pga\src
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+rmdir /S /Q D:\proiecte-pga\bin\Debug\assets
+if %errorlevel% neq 0 goto :cmEnd
+mklink /J D:\proiecte-pga\bin\Debug\assets D:\proiecte-pga\assets
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:\proiecte-pga/deps/prebuilt/GFXComponents/x86_64/GFXComponents.dll D:\proiecte-pga\bin\Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;deps\prebuilt\GL\x86_64\glew32.lib;deps\prebuilt\GLFW\x86_64\glfw3dll.lib;deps\prebuilt\assimp\x86_64\assimp.lib;deps\prebuilt\spdlog\x86_64\spdlog.lib;deps\prebuilt\freetype\x86_64\freetype.lib;deps\prebuilt\GFXComponents\x86_64\GFXComponents.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/proiecte-pga/Debug/GFXFramework.lib</ImportLibrary>
+      <LinkErrorReporting>
+      </LinkErrorReporting>
+      <ProgramDataBaseFile>D:/proiecte-pga/bin/Debug/GFXFramework.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress>
+      </RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\proiecte-pga\deps\api;D:\proiecte-pga\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DisableSpecificWarnings>4100;4458;4189</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ForceConformanceInForLoopScope>
+      </ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>
+      </RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType>
+      </TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LIBGFXC_EXPORTS;GLM_FORCE_SILENT_WARNINGS;_CRT_SECURE_NO_WARNINGS;SOLVED;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LIBGFXC_EXPORTS;GLM_FORCE_SILENT_WARNINGS;_CRT_SECURE_NO_WARNINGS;SOLVED;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\proiecte-pga\deps\api;D:\proiecte-pga\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\proiecte-pga\deps\api;D:\proiecte-pga\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/proiecte-pga/deps/prebuilt/GL/x86_64/glew32.dll D:/proiecte-pga/deps/prebuilt/GLFW/x86_64/glfw3.dll D:/proiecte-pga/deps/prebuilt/assimp/x86_64/assimp.dll D:/proiecte-pga/deps/prebuilt/spdlog/x86_64/spdlog.dll D:/proiecte-pga/deps/prebuilt/freetype/x86_64/freetype.dll D:/proiecte-pga/bin/Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+rmdir /S /Q D:\proiecte-pga\bin\Release\src
+if %errorlevel% neq 0 goto :cmEnd
+mklink /J D:\proiecte-pga\bin\Release\src D:\proiecte-pga\src
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+rmdir /S /Q D:\proiecte-pga\bin\Release\assets
+if %errorlevel% neq 0 goto :cmEnd
+mklink /J D:\proiecte-pga\bin\Release\assets D:\proiecte-pga\assets
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:\proiecte-pga/deps/prebuilt/GFXComponents/x86_64/GFXComponents.dll D:\proiecte-pga\bin\Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;deps\prebuilt\GL\x86_64\glew32.lib;deps\prebuilt\GLFW\x86_64\glfw3dll.lib;deps\prebuilt\assimp\x86_64\assimp.lib;deps\prebuilt\spdlog\x86_64\spdlog.lib;deps\prebuilt\freetype\x86_64\freetype.lib;deps\prebuilt\GFXComponents\x86_64\GFXComponents.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/proiecte-pga/Release/GFXFramework.lib</ImportLibrary>
+      <LinkErrorReporting>
+      </LinkErrorReporting>
+      <ProgramDataBaseFile>D:/proiecte-pga/bin/Release/GFXFramework.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress>
+      </RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\proiecte-pga\deps\api;D:\proiecte-pga\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DisableSpecificWarnings>4100;4458;4189</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ForceConformanceInForLoopScope>
+      </ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>
+      </RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType>
+      </TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LIBGFXC_EXPORTS;GLM_FORCE_SILENT_WARNINGS;_CRT_SECURE_NO_WARNINGS;SOLVED;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LIBGFXC_EXPORTS;GLM_FORCE_SILENT_WARNINGS;_CRT_SECURE_NO_WARNINGS;SOLVED;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\proiecte-pga\deps\api;D:\proiecte-pga\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\proiecte-pga\deps\api;D:\proiecte-pga\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/proiecte-pga/deps/prebuilt/GL/x86_64/glew32.dll D:/proiecte-pga/deps/prebuilt/GLFW/x86_64/glfw3.dll D:/proiecte-pga/deps/prebuilt/assimp/x86_64/assimp.dll D:/proiecte-pga/deps/prebuilt/spdlog/x86_64/spdlog.dll D:/proiecte-pga/deps/prebuilt/freetype/x86_64/freetype.dll D:/proiecte-pga/bin/MinSizeRel
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+rmdir /S /Q D:\proiecte-pga\bin\MinSizeRel\src
+if %errorlevel% neq 0 goto :cmEnd
+mklink /J D:\proiecte-pga\bin\MinSizeRel\src D:\proiecte-pga\src
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+rmdir /S /Q D:\proiecte-pga\bin\MinSizeRel\assets
+if %errorlevel% neq 0 goto :cmEnd
+mklink /J D:\proiecte-pga\bin\MinSizeRel\assets D:\proiecte-pga\assets
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:\proiecte-pga/deps/prebuilt/GFXComponents/x86_64/GFXComponents.dll D:\proiecte-pga\bin\MinSizeRel
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;deps\prebuilt\GL\x86_64\glew32.lib;deps\prebuilt\GLFW\x86_64\glfw3dll.lib;deps\prebuilt\assimp\x86_64\assimp.lib;deps\prebuilt\spdlog\x86_64\spdlog.lib;deps\prebuilt\freetype\x86_64\freetype.lib;deps\prebuilt\GFXComponents\x86_64\GFXComponents.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/proiecte-pga/MinSizeRel/GFXFramework.lib</ImportLibrary>
+      <LinkErrorReporting>
+      </LinkErrorReporting>
+      <ProgramDataBaseFile>D:/proiecte-pga/bin/MinSizeRel/GFXFramework.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress>
+      </RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\proiecte-pga\deps\api;D:\proiecte-pga\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4458;4189</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ForceConformanceInForLoopScope>
+      </ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>
+      </RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType>
+      </TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LIBGFXC_EXPORTS;GLM_FORCE_SILENT_WARNINGS;_CRT_SECURE_NO_WARNINGS;SOLVED;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LIBGFXC_EXPORTS;GLM_FORCE_SILENT_WARNINGS;_CRT_SECURE_NO_WARNINGS;SOLVED;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\proiecte-pga\deps\api;D:\proiecte-pga\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\proiecte-pga\deps\api;D:\proiecte-pga\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/proiecte-pga/deps/prebuilt/GL/x86_64/glew32.dll D:/proiecte-pga/deps/prebuilt/GLFW/x86_64/glfw3.dll D:/proiecte-pga/deps/prebuilt/assimp/x86_64/assimp.dll D:/proiecte-pga/deps/prebuilt/spdlog/x86_64/spdlog.dll D:/proiecte-pga/deps/prebuilt/freetype/x86_64/freetype.dll D:/proiecte-pga/bin/RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+rmdir /S /Q D:\proiecte-pga\bin\RelWithDebInfo\src
+if %errorlevel% neq 0 goto :cmEnd
+mklink /J D:\proiecte-pga\bin\RelWithDebInfo\src D:\proiecte-pga\src
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+rmdir /S /Q D:\proiecte-pga\bin\RelWithDebInfo\assets
+if %errorlevel% neq 0 goto :cmEnd
+mklink /J D:\proiecte-pga\bin\RelWithDebInfo\assets D:\proiecte-pga\assets
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:\proiecte-pga/deps/prebuilt/GFXComponents/x86_64/GFXComponents.dll D:\proiecte-pga\bin\RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;deps\prebuilt\GL\x86_64\glew32.lib;deps\prebuilt\GLFW\x86_64\glfw3dll.lib;deps\prebuilt\assimp\x86_64\assimp.lib;deps\prebuilt\spdlog\x86_64\spdlog.lib;deps\prebuilt\freetype\x86_64\freetype.lib;deps\prebuilt\GFXComponents\x86_64\GFXComponents.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/proiecte-pga/RelWithDebInfo/GFXFramework.lib</ImportLibrary>
+      <LinkErrorReporting>
+      </LinkErrorReporting>
+      <ProgramDataBaseFile>D:/proiecte-pga/bin/RelWithDebInfo/GFXFramework.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress>
+      </RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\proiecte-pga\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/proiecte-pga/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/proiecte-pga -BD:/proiecte-pga --check-stamp-file D:/proiecte-pga/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeCCompiler.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeCXXCompiler.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeRCCompiler.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeSystem.cmake;D:\proiecte-pga\infra\utils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\proiecte-pga\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/proiecte-pga/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/proiecte-pga -BD:/proiecte-pga --check-stamp-file D:/proiecte-pga/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeCCompiler.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeCXXCompiler.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeRCCompiler.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeSystem.cmake;D:\proiecte-pga\infra\utils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\proiecte-pga\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/proiecte-pga/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/proiecte-pga -BD:/proiecte-pga --check-stamp-file D:/proiecte-pga/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeCCompiler.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeCXXCompiler.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeRCCompiler.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeSystem.cmake;D:\proiecte-pga\infra\utils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\proiecte-pga\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/proiecte-pga/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/proiecte-pga -BD:/proiecte-pga --check-stamp-file D:/proiecte-pga/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeCCompiler.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeCXXCompiler.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeRCCompiler.cmake;D:\proiecte-pga\CMakeFiles\4.1.2\CMakeSystem.cmake;D:\proiecte-pga\infra\utils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\proiecte-pga\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\proiecte-pga\src\components\camera_input.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\components\primitives_rendering_scene.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\components\scene_input.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\components\simple_scene.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\components\software_rendering_scene.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\components\text_renderer.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\core\engine.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\depth_image.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\frame_buffer.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\gpu_buffers.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\image.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\mesh.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\shader.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\core\gpu\texture2D.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\core\managers\texture_manager.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\core\window\input_controller.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\core\window\window_callbacks.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\core\window\window_object.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\core\world.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab01\lab01.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab02\lab02.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab02\triangle_rasterizer.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab03\lab03.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab04\lab04.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab05\lab05.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab06\lab06.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab07\lab07.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab08\lab08.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab09\lab09.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab10\lab10.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\lab11\lab11.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\proiect1\proiect1.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\proiect2\proiect2.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\lab\proiect3\proiect3.cpp">
+      <ObjectFileName>$(IntDir)/src/lab/proiect3/proiect3.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\Combine.comp.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\FFT.comp.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\InitialSpectrum.comp.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\TimeEvolution.comp.glsl" />
+    <ClCompile Include="src\lab\GPGPU\GPGPU.cpp" />
+    <ClCompile Include="src\lab\proiect3v2\proiect3v2.cpp">
+      <ObjectFileName>$(IntDir)/src/lab/proiect3v2/proiect3.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="D:\proiecte-pga\src\lab\tema\tema.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\main.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\utils\gl_utils.cpp" />
+    <ClCompile Include="D:\proiecte-pga\src\utils\text_utils.cpp" />
+    <ClInclude Include="D:\proiecte-pga\src\components\camera.h" />
+    <ClInclude Include="D:\proiecte-pga\src\components\camera_input.h" />
+    <ClInclude Include="D:\proiecte-pga\src\components\exports.h" />
+    <ClInclude Include="D:\proiecte-pga\src\components\primitives_rendering_scene.h" />
+    <ClInclude Include="D:\proiecte-pga\src\components\scene_input.h" />
+    <ClInclude Include="D:\proiecte-pga\src\components\simple_scene.h" />
+    <ClInclude Include="D:\proiecte-pga\src\components\software_rendering_scene.h" />
+    <ClInclude Include="D:\proiecte-pga\src\components\text_renderer.h" />
+    <ClInclude Include="D:\proiecte-pga\src\components\transform.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\engine.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\depth_image.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\frame_buffer.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\gpu_buffers.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\image.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\mesh.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\particle_effect.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\shader.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\ssbo.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\texture2D.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\gpu\vertex_format.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\managers\resource_path.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\managers\texture_manager.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\window\input_controller.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\window\window_callbacks.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\window\window_object.h" />
+    <ClInclude Include="D:\proiecte-pga\src\core\world.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab01\lab01.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab02\lab02.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab02\triangle_rasterizer.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab03\lab03.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab03\transform2D.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab04\lab04.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab04\transform3D.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab05\lab05.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab05\transform3D.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab06\lab06.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab06\shaders\LabShader.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab06\shaders\LabShader.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab06\shaders\LastTask.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab06\shaders\LastTask.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab07\lab07.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab07\shaders\FragmentShader.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab07\shaders\VertexShader.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\lab08.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Bonus.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Bonus.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Earth.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Earth.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Ground.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Ground.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\LabShader.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\LabShader.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Mix.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab08\shaders\Mix.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\lab09.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ShadowMappingPassOne.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ShadowMappingPassOne.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ShadowMappingPassTwo.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ShadowMappingPassTwo.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ViewColorTexture.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ViewColorTexture.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ViewDepthTexture.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab09\shaders\ViewDepthTexture.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\lab10.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\Color.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\Explosion.GS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\LabShader.GS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\Normal.GS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\Texture.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\Triangle.GS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab10\shaders\WorldSpace.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab11\lab11.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab11\shaders\FragmentShader.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab11\shaders\GeometryShader.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab11\shaders\VertexShader.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\lab_list.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\proiect1.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\FragmentShader.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\NormalMapping.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\NormalMapping2D.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\ParallaxMapping.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\ParallaxMappingv2.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\ParallaxOcclusionMapping.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\SteepParallaxMapping.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect1\shaders\VertexShader.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\proiect2.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\FloorSSR.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\FloorSSR.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\FloorSSR_BS.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\FragmentShader.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\VertexShader.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\objects\Box.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\objects\Box.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\objects\Earth.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\objects\Earth.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\objects\Floor.FS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect2\shaders\objects\Floor.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\proiect3.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\FragmentShader.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\OceanFS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\OceanVS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\VertexShader.glsl" />
+    <ClInclude Include="src\lab\GPGPU\GPGPU.h" />
+    <ClInclude Include="src\lab\proiect3v2\proiect3v2.h" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3v2\shaders\FragmentShader.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3v2\shaders\OceanFS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3v2\shaders\OceanVS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\proiect3v2\shaders\VertexShader.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\tema\shaders\Curvature.VS.glsl" />
+    <ClInclude Include="D:\proiecte-pga\src\lab\tema\tema.h" />
+    <ClInclude Include="D:\proiecte-pga\src\utils\gl_utils.h" />
+    <ClInclude Include="D:\proiecte-pga\src\utils\glm_utils.h" />
+    <ClInclude Include="D:\proiecte-pga\src\utils\math_utils.h" />
+    <ClInclude Include="D:\proiecte-pga\src\utils\memory_utils.h" />
+    <ClInclude Include="D:\proiecte-pga\src\utils\text_utils.h" />
+    <ClInclude Include="D:\proiecte-pga\src\utils\window_utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\lab\proiect3v2\shaders\OceanCompute.comp.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\proiecte-pga\ZERO_CHECK.vcxproj">
+      <Project>{6684BD61-C32E-3B24-9F0E-8D61EF8F4F65}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

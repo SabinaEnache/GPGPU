@@ -1,0 +1,3 @@
+D:/proiecte-pga/CMakeFiles/GFXFramework.dir
+D:/proiecte-pga/CMakeFiles/ALL_BUILD.dir
+D:/proiecte-pga/CMakeFiles/ZERO_CHECK.dir
