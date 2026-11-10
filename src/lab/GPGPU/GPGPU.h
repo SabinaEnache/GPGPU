@@ -6,6 +6,7 @@
 #include "components/simple_scene.h"
 #include "components/transform.h"
 #include "lab/lab04/transform3D.h"
+#include "lab/GPGPU/Shape.h"
 
 namespace lab
 {
@@ -31,6 +32,8 @@ namespace lab
         void DrawSphere();
         void DrawCube();
         void DrawCylinder();
+        void ShowFramerate();
+		void UpdateShapes();
 
         void OnInputUpdate(float deltaTime, int mods) override;
         void OnKeyPress(int key, int mods) override;
@@ -42,11 +45,19 @@ namespace lab
         void OnWindowResize(int width, int height) override;
 
         Mesh* CreateMesh(const char* name, const std::vector<VertexFormat>& vertices, const std::vector<unsigned int>& indices);
-
+		void SpawnShape(Shape shape);
 
         unsigned int framebuffer_object;
         unsigned int color_texture;
         unsigned int depth_texture;
+
+        std::vector<Shape> shapes;
+		int bigCubeLength;
+
+        int gravity;
+
+        double lastTime;
+        int nbFrames;
 
 
     };

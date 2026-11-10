@@ -2,7 +2,7 @@
 #include <stb/stb_image.h>
 #include <random>
 #include <ctime>
-
+#include <chrono>
 
 #include <vector>
 #include <string>
@@ -20,6 +20,7 @@ GPGPU::GPGPU()
 GPGPU::~GPGPU()
 {
 }
+
 
 void GPGPU::DrawQuad() 
 {
@@ -199,6 +200,28 @@ void GPGPU::DrawCylinder()
     CreateMesh("cylinder", vertices, indices);
 }
 
+void GPGPU::SpawnShape(Shape shape)
+{    
+    glm::mat4 model = glm::mat4(1);
+	model = glm::translate(model, shape.centerPosition);
+	model *= glm::scale(glm::mat4(1), glm::vec3(shape.length));
+    RenderSimpleMesh(meshes[shape.type], shaders["LabShader"], model, glm::vec3(1));
+
+}
+
+void GPGPU::UpdateShapes()
+{
+    for (auto& shape : shapes) {
+    // Fall based on gravity
+        shape.velocity.y -= gravity * 0.016f; // Assuming 60 FPS, so deltaTime is ~0.016 seconds
+        shape.centerPosition += shape.velocity * 0.016f;
+        // Check for collision with the ground (y = -bigCubeLength / 2)
+        if (shape.centerPosition.y - shape.length / 2 < -bigCubeLength / 2) {
+            shape.centerPosition.y = -bigCubeLength / 2 + shape.length / 2;
+            shape.velocity.y = 0; // Stop falling
+		}
+    }
+}
 
 
 void GPGPU::Init()
@@ -220,10 +243,24 @@ void GPGPU::Init()
         shaders[shader->GetName()] = shader;
     }
 
-    DrawQuad();
-    DrawCube();
-    DrawSphere();
-    DrawCylinder();
+    // This is where the mesh info is defined in order to be used later
+    {
+        DrawQuad();
+        DrawCube();
+        DrawSphere();
+        DrawCylinder();
+    }
+
+    // physics
+	gravity = 9.81f; 
+
+	// Setting the bounding cube length to 20 for now
+	bigCubeLength = 20;
+
+	// Framerate timer initialization
+    double lastTime = glfwGetTime();
+    int nbFrames = 0;
+
 
 }
 
@@ -359,17 +396,13 @@ void GPGPU::FrameStart()
 
 void GPGPU::Update(float deltaTimeSeconds)
 
-{   glm::mat4 model = glm::mat4(1);
-    model = glm::translate(model, glm::vec3(-2, 1, 0));
-    RenderSimpleMesh(meshes["cube"], shaders["LabShader"], model, glm::vec3(1));
-   
-    model = glm::mat4(1);
-    model = glm::translate(model, glm::vec3(0, 1, 0));
-    RenderSimpleMesh(meshes["sphere"], shaders["LabShader"], model, glm::vec3(1));
+{
+    for each(const auto& shape in shapes)
+    {
+        SpawnShape(shape);
+    }
+    UpdateShapes();
 
-    model = glm::mat4(1);
-    model = glm::translate(model, glm::vec3(2, 1, 0));
-    RenderSimpleMesh(meshes["cylinder"], shaders["LabShader"], model, glm::vec3(1));
 
     //cub
     {
@@ -380,25 +413,25 @@ void GPGPU::Update(float deltaTimeSeconds)
 
         //stanga
         glm::mat4 stanga = glm::mat4(1);
-        stanga = glm::translate(stanga, glm::vec3(-10, 0, 0));
-        stanga = glm::rotate(stanga, glm::radians(90.0f), glm::vec3(0,1,0));
+        stanga = glm::translate(stanga, glm::vec3(-bigCubeLength / 2, 0, 0));
+        stanga = glm::rotate(stanga, glm::radians(90.0f), glm::vec3(0, 1, 0));
         RenderSimpleMesh(meshes["quad"], shaders["TransparentShader"], stanga, glm::vec3(1));
 
         //dreapta
         glm::mat4 dreapta = glm::mat4(1);
-        dreapta = glm::translate(dreapta, glm::vec3(10, 0, 0));
-        dreapta = glm::rotate(dreapta, glm::radians(90.0f), glm::vec3(0,1,0));
+        dreapta = glm::translate(dreapta, glm::vec3(bigCubeLength / 2, 0, 0));
+        dreapta = glm::rotate(dreapta, glm::radians(90.0f), glm::vec3(0, 1, 0));
         RenderSimpleMesh(meshes["quad"], shaders["TransparentShader"], dreapta, glm::vec3(1));
 
         //sus
         glm::mat4 sus = glm::mat4(1);
-        sus = glm::translate(sus, glm::vec3(0, 10, 0));
+        sus = glm::translate(sus, glm::vec3(0, bigCubeLength / 2, 0));
         sus = glm::rotate(sus, glm::radians(90.0f), glm::vec3(1, 0, 0));
         RenderSimpleMesh(meshes["quad"], shaders["TransparentShader"], sus, glm::vec3(1));
 
         //jos
         glm::mat4 jos = glm::mat4(1);
-        jos = glm::translate(jos, glm::vec3(0, -10, 0));
+        jos = glm::translate(jos, glm::vec3(0, -bigCubeLength / 2, 0));
         jos = glm::rotate(jos, glm::radians(90.0f), glm::vec3(1, 0, 0));
         RenderSimpleMesh(meshes["quad"], shaders["TransparentShader"], jos, glm::vec3(1));
 
@@ -407,6 +440,23 @@ void GPGPU::Update(float deltaTimeSeconds)
         fata = glm::translate(fata, glm::vec3(0, 0, 10));
         RenderSimpleMesh(meshes["quad"], shaders["TransparentShader"], fata, glm::vec3(1));
     }
+
+    // Time measurements for framerate calculation
+    // Measure speed
+    double currentTime = glfwGetTime();
+    nbFrames++;
+    if (currentTime - lastTime >= 1.0) { // If last prinf() was more than 1 sec ago
+        // printf and reset timer
+		// TODO: find out how to add to overwrite window name with framerate
+        double fps = double(nbFrames) / (currentTime - lastTime);
+        window->MakeCurrentContext();
+		window->props.name = " - FPS: " + std::to_string(fps);
+
+        printf("%.2f ms/frame\n", fps);
+        nbFrames = 0;
+        lastTime = currentTime;
+    }
+
 }
 
 
@@ -530,7 +580,83 @@ void GPGPU::OnInputUpdate(float deltaTime, int mods)
 void GPGPU::OnKeyPress(int key, int mods)
 {
     // Add key press event
+    // Spawn cube within big cube
+    if (key == GLFW_KEY_1)
+    {
+        Shape newShape("cube", glm::vec3(rand() % bigCubeLength - bigCubeLength / 2, bigCubeLength / 2, rand() % bigCubeLength - bigCubeLength / 2), 1, glm::vec3(0, 0, 0), 1);
+		shapes.push_back(newShape);
+		printf("Spawned cube at position (%.2f, %.2f, %.2f)\n", newShape.centerPosition.x, newShape.centerPosition.y, newShape.centerPosition.z); 
+	}
+    // Spawn sphere within big cube
+    if (key == GLFW_KEY_2)
+    {
+        Shape newShape("sphere", glm::vec3(rand() % bigCubeLength - bigCubeLength / 2, bigCubeLength / 2, rand() % bigCubeLength - bigCubeLength / 2), 1, glm::vec3(0, 0, 0), 1);
+		shapes.push_back(newShape);
+		printf("Spawned sphere at position (%.2f, %.2f, %.2f)\n", newShape.centerPosition.x, newShape.centerPosition.y, newShape.centerPosition.z); 
+	}
+	// Spawn cylinder within big cube
+    if (key == GLFW_KEY_3)
+    {
+        Shape newShape("cylinder", glm::vec3(rand() % bigCubeLength - bigCubeLength / 2, bigCubeLength / 2, rand() % bigCubeLength - bigCubeLength / 2), 1, glm::vec3(0, 0, 0), 1);
+		shapes.push_back(newShape);
+		printf("Spawned cylinder at position (%.2f, %.2f, %.2f)\n", newShape.centerPosition.x, newShape.centerPosition.y, newShape.centerPosition.z);
+    }
+	// Spawn 100 spheres, 250 cubes, 500 cylinders within big cube
+    if (key == GLFW_KEY_4)
+    {
+        for (int i = 0; i < 100; ++i) {
+            Shape newShape("sphere", glm::vec3(rand() % bigCubeLength - bigCubeLength / 2, bigCubeLength / 2, rand() % bigCubeLength - bigCubeLength / 2), 1, glm::vec3(0, 0, 0), 1);
+            shapes.push_back(newShape);
+        }
+        for (int i = 0; i < 250; ++i) {
+            Shape newShape("cube", glm::vec3(rand() % bigCubeLength - bigCubeLength / 2, bigCubeLength / 2, rand() % bigCubeLength - bigCubeLength / 2), 1, glm::vec3(0, 0, 0), 1);
+            shapes.push_back(newShape);
+        }
+        for (int i = 0; i < 500; ++i) {
+            Shape newShape("cylinder", glm::vec3(rand() % bigCubeLength - bigCubeLength / 2, bigCubeLength / 2, rand() % bigCubeLength - bigCubeLength / 2), 1, glm::vec3(0, 0, 0), 1);
+            shapes.push_back(newShape);
+        }
+    }
+	// Spawn 250 spheres, 500 cubes, 1000 cylinders within big cube
+    if (key == GLFW_KEY_5)
+    {
+        for (int i = 0; i < 250; ++i) {
+            Shape newShape("sphere", glm::vec3(rand() % bigCubeLength - bigCubeLength / 2, bigCubeLength / 2, rand() % bigCubeLength - bigCubeLength / 2), 1, glm::vec3(0, 0, 0), 1);
+            shapes.push_back(newShape);
+        }
+        for (int i = 0; i < 500; ++i) {
+            Shape newShape("cube", glm::vec3(rand() % bigCubeLength - bigCubeLength / 2, bigCubeLength / 2, rand() % bigCubeLength - bigCubeLength / 2), 1, glm::vec3(0, 0, 0), 1);
+            shapes.push_back(newShape);
+        }
+        for (int i = 0; i < 1000; ++i) {
+            Shape newShape("cylinder", glm::vec3(rand() % bigCubeLength - bigCubeLength / 2, bigCubeLength / 2, rand() % bigCubeLength - bigCubeLength / 2), 1, glm::vec3(0, 0, 0), 1);
+            shapes.push_back(newShape);
+        }
+	}
+	// Spawn 500 spheres, 1000 cubes, 2000 cylinders within big cube
+    if (key == GLFW_KEY_6)
+    {
+        for (int i = 0; i < 500; ++i) {
+            Shape newShape("sphere", glm::vec3(rand() % bigCubeLength - bigCubeLength / 2, bigCubeLength / 2, rand() % bigCubeLength - bigCubeLength / 2), 1, glm::vec3(0, 0, 0), 1);
+            shapes.push_back(newShape);
+        }
+        for (int i = 0; i < 1000; ++i) {
+            Shape newShape("cube", glm::vec3(rand() % bigCubeLength - bigCubeLength / 2, bigCubeLength / 2, rand() % bigCubeLength - bigCubeLength / 2), 1, glm::vec3(0, 0, 0), 1);
+            shapes.push_back(newShape);
+        }
+        for (int i = 0; i < 2000; ++i) {
+            Shape newShape("cylinder", glm::vec3(rand() % bigCubeLength - bigCubeLength / 2, bigCubeLength / 2, rand() % bigCubeLength - bigCubeLength / 2), 1, glm::vec3(0, 0, 0), 1);
+            shapes.push_back(newShape);
+        }
+	}
+	// Clear all shapes
+    if (key == GLFW_KEY_7)
+    {
+        shapes.clear();
+        printf("Cleared all shapes\n");
+	}
 }
+
 
 
 void GPGPU::OnKeyRelease(int key, int mods)
