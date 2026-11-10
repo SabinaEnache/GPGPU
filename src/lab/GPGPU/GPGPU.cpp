@@ -11,6 +11,9 @@
 using namespace std;
 using namespace lab;
 
+static const float EPS = 1e-6f;
+static bool testMoving = false;       
+static bool testWasTouching = false;
 
 GPGPU::GPGPU()
 {
@@ -70,16 +73,16 @@ void GPGPU::DrawCube()
         2, 6, 4,
         0, 2, 4
     };
-
+    std::cout << "Numarul de vertecsi ai cubului: " << cubeVertices.size() << endl;
     // Create the mesh from the data
     CreateMesh("cube", cubeVertices, cubeIndices);
 }
 
 void GPGPU::DrawSphere()
 {
-    float radius = 0.5;
-    int stacks = 36;
-    int sectors = 18;
+    /*float radius = 0.5;
+    int stacks = 16;
+    int sectors = 8;
     vector<VertexFormat> sphereVertices;
     vector<unsigned int> sphereIndices;
 
@@ -99,7 +102,7 @@ void GPGPU::DrawSphere()
             sphereVertices.push_back({ glm::vec3(x, y, z), glm::vec3(1,1,0) });
         }
     }
-
+    
     for (int i = 0; i < stacks; ++i)
     {
         int k1 = i * (sectors + 1);
@@ -121,7 +124,52 @@ void GPGPU::DrawSphere()
             }
         }
     }
+    std::cout << "Numarul de vertecsi ai sferei: " << sphereVertices.size() << endl;
     CreateMesh("sphere", sphereVertices, sphereIndices);
+    */
+
+    //sfera de pe discord arata mai bine chiar daca are acelasi nr de vertecsi
+    const int sectorCount = 16;
+    const int stackCount = 8;
+    const float radius = 0.5f;
+    const float pi = 3.14159265359f;
+
+    vector<VertexFormat> vertices;
+    vector<unsigned int> indices;
+
+    for (int stack = 0; stack <= stackCount; stack++) {
+        float stackAngle = -pi / 2.0f + pi * stack / stackCount;
+        float y = radius * sin(stackAngle);
+        float xz = radius * cos(stackAngle);
+
+        for (int sector = 0; sector <= sectorCount; sector++) {
+            float sectorAngle = 2.0f * pi * sector / sectorCount;
+
+            float x = xz * cos(sectorAngle);
+            float z = xz * sin(sectorAngle);
+
+            glm::vec3 position(x, y, z);
+
+            vertices.push_back(VertexFormat(position, glm::vec3(1,1,0)));
+        }
+    }
+
+    for (int stack = 0; stack < stackCount; stack++) {
+        for (int sector = 0; sector < sectorCount; sector++) {
+            unsigned int first = stack * (sectorCount + 1) + sector;
+            unsigned int second = first + sectorCount + 1;
+
+            indices.push_back(first);
+            indices.push_back(second);
+            indices.push_back(first + 1);
+
+            indices.push_back(first + 1);
+            indices.push_back(second);
+            indices.push_back(second + 1);
+        }
+    }
+    std::cout << "Numarul de vertecsi ai sferei: " << vertices.size() << endl;
+    CreateMesh("sphere", vertices, indices);
 }
 
 void GPGPU::DrawCylinder()
@@ -195,7 +243,7 @@ void GPGPU::DrawCylinder()
         indices.push_back(topNext);
         indices.push_back(topCurrent);
     }
-
+    std::cout << "Numarul de vertecsi ai cilindrului: " << vertices.size() << endl;
     // Create the mesh from the data
     CreateMesh("cylinder", vertices, indices);
 }
@@ -261,7 +309,245 @@ void GPGPU::Init()
     double lastTime = glfwGetTime();
     int nbFrames = 0;
 
+    std::vector<glm::vec3> simplex = {};
+    glm::vec3 direction = glm::vec3(0);
 
+    Shape newShape1("cube", glm::vec3(0, 0, 0), 1, glm::vec3(0, 0, 0), 1);
+    shapes.push_back(newShape1);
+    Shape newShape2("sphere", glm::vec3(2, 0, 0), 1, glm::vec3(0, 0, 0), 1);
+    shapes.push_back(newShape2);
+}
+
+//produsul vectorial (AxB)xC unde A,B si C sunt vectori
+glm::vec3 GPGPU::TripleProduct(glm::vec3 A, glm::vec3 B, glm::vec3 C) 
+{
+    return glm::cross(glm::cross(A, B), C);
+}
+
+//punctul cel mai indepartat de centrul obiectului intr-o directie
+glm::vec3 GPGPU::SupportShape(Shape shape, glm::vec3 direction) 
+{
+    glm::vec3 center = shape.centerPosition;
+    
+    if (shape.type == "cube") 
+    {
+        float semiinaltime = shape.length / 2;
+        return center + glm::vec3(direction.x >= 0 ? semiinaltime : -semiinaltime,
+                                  direction.y >= 0 ? semiinaltime : -semiinaltime,
+                                  direction.z >= 0 ? semiinaltime : -semiinaltime);
+    }
+
+    if (shape.type == "sphere")
+    {
+        float raza = shape.length / 2;
+        float len = glm::length(direction);
+        if (len < EPS) return center + glm::vec3(raza, 0, 0);
+        return center + direction * (raza / len); //nu merge doar center + raza?
+    }
+
+    if (shape.type == "cylinder") 
+    {
+        float r = shape.length / 2;
+        float hh = shape.length / 2;                   
+        glm::vec3 p = center;
+        p.y += (direction.y >= 0 ? hh : -hh);          
+
+        glm::vec2 radial(direction.x, direction.z);
+        float len = glm::length(radial);
+        if (len > EPS) {
+            radial = radial / len * r;         
+            p.x += radial.x;
+            p.z += radial.y;
+        }
+        return p;
+    }
+
+    return center;
+}
+
+bool GPGPU::LineCase(std::vector<glm::vec3>& simplex, glm::vec3& direction) 
+{
+    printf("line case\n");
+    glm::vec3 A = simplex[0];
+    glm::vec3 B = simplex[1];
+    glm::vec3 AB = normalize(B - A);
+    glm::vec3 AO = normalize(-A);
+    
+    //cautam un al treilea punct
+    if (glm::dot(AB, AO) > 0) 
+    {
+        direction = TripleProduct(AB, AO, AB); //normala pe AB catre origine
+    }
+    else //originea e in partea opusa fata de B, deci ne uitam pe directia AO
+    {
+        simplex = { A };
+        direction = AO;
+    }
+    //sanse minuscule ca originea sa fie pe linie, deci nu le luam in considerare si returnam mereu fals
+    return false;
+}
+
+bool GPGPU::TriangleCase(std::vector<glm::vec3>& simplex, glm::vec3& direction)
+{
+    printf("triangle case\n");
+    glm::vec3 A = simplex[0];
+    glm::vec3 B = simplex[1];
+    glm::vec3 C = simplex[2];
+
+    glm::vec3 AB = normalize(B - A);
+    glm::vec3 AC = normalize(C - A);
+    glm::vec3 AO = normalize(-A);
+
+    glm::vec3 ABC = normalize(glm::cross(AB, AC)); //produs vectorial intre AB si AC => triunghiul ABC
+
+    glm::vec3 normalaPeAB = TripleProduct(AC, AB, AB); 
+    glm::vec3 normalaPeAC = TripleProduct(AB, AC, AC);
+
+
+    //Rab - cautam un alt punct pentru un triunghi nou
+    if (glm::dot(normalaPeAB, AO) > 0) //daca produsul scalar dintre normala pe AB si AO > 0 (merge in directia opusa lui C)
+    {
+        //originea este dincolo de AB, deci C nu e bun
+        simplex = { A, B };
+        direction = normalaPeAB;
+        return false;
+    }
+
+    //Rac - cautam un alt punct pentru un triunghi nou
+    if (glm::dot(normalaPeAC, AO) > 0) //daca produsul scalar dintre normala pe AC si AO > 0 (merge in directia opusa lui B)
+    {
+        //inseamna ca originea e dincolo de AC, deci B nu e bun
+        simplex = { A, C };
+        direction = normalaPeAC;
+        return false;
+    }
+
+    //daca originea nu este nici in Rab, nici in Rac, se verifica tot triunghiul
+    float side = glm::dot(ABC, AO);
+    if (std::abs(side) < EPS) return true; //daca produsul vectorial dintre triunghiul ABC si AO e basically zero => originea e PE triunghi
+    if (side > 0) { //originea e deasupra triunghiului => tetraedru
+        direction = ABC;
+    }
+    else { //originea e sub triunghi => tetraedru
+        direction = -ABC;
+    }
+    return false;
+
+    ////glm::dot(glm::cross(ABC,AC), AO) > 0 == glm::dot(normalaPeAB, AO) > 0
+    //if (glm::dot(normalaPeAB, AO) > 0) //originea e dincolo de AB, deci eliminam C
+    //{
+    //    if (glm::dot(AC, AO) > 0) 
+    //    {
+    //        simplex = {A, C};
+    //        direction = normalaPeAC;
+    //        //direction = TripleProduct(AC, AO, AC);
+    //    }
+    //    else 
+    //    {
+    //        simplex = { A,C };
+    //        return LineCase(simplex, direction);
+    //    }
+    //}
+    //else
+    //{
+    //    if (glm::dot(glm::cross(AB, ABC), AO) > 0) 
+    //    {
+    //        simplex = { A,B };
+    //        return LineCase(simplex, direction);
+    //    }
+    //    else
+    //    {
+    //        if (glm::dot(ABC, AO) > 0) 
+    //        {
+    //            direction = ABC;
+    //        }
+    //        else 
+    //        {
+    //            simplex = { A, B, C };
+    //            direction = -ABC;
+    //        }
+    //    }
+    //}
+
+    //return false;
+}
+
+bool GPGPU::TetrahedronCase(std::vector<glm::vec3>& simplex, glm::vec3& direction) 
+{
+    printf("tetrahedron case\n");
+    glm::vec3 A = simplex[0];
+    glm::vec3 B = simplex[1];
+    glm::vec3 C = simplex[2];
+    glm::vec3 D = simplex[3];
+
+    glm::vec3 AB = normalize(B - A);
+    glm::vec3 AC = normalize(C - A);
+    glm::vec3 AD = normalize(D - A);
+    glm::vec3 AO = normalize(-A);
+
+    glm::vec3 ABC = normalize(glm::cross(AB, AC));
+    glm::vec3 ACD = normalize(glm::cross(AC, AD));
+    glm::vec3 ABD = normalize(glm::cross(AD, AB));
+
+    if (glm::dot(ABC, AO) > 0) { //daca originea e deasupra ABC
+        simplex = { A,B,C };
+        return TriangleCase(simplex, direction);
+    }
+    if (glm::dot(ACD, AO) > 0) { //daca originea e deasupra ACD
+        simplex = { A,C,D };
+        return TriangleCase(simplex, direction);
+    }
+    if (glm::dot(ABD, AO)>0) { //daca originea e deasupra ABD
+        simplex = { A, D, B };
+        return TriangleCase(simplex, direction);
+    }
+
+    //daca originea e sub toate cele 3 triunghiuri (+BCD care e fostul ABC de la care am ajuns aici), inseamna ca originea este IN tetraedru
+    return true;
+}
+
+bool GPGPU::HandleSimplex(std::vector<glm::vec3>& simplex, glm::vec3& direction) 
+{
+    switch (simplex.size()) {
+        case 2: return LineCase(simplex, direction);
+        case 3: return TriangleCase(simplex, direction);
+        case 4: return TetrahedronCase(simplex, direction);
+    }
+    return false;
+}
+
+bool GPGPU::GJK(Shape shapeA, Shape shapeB) 
+{
+    simplex.clear();
+    //direction = normalize(shapeB.centerPosition - shapeA.centerPosition);
+    glm::vec3 supportPoint = MinkowskiDifference(shapeA, shapeB, glm::vec3(1,0,0));
+
+    simplex.insert(simplex.begin(), supportPoint);
+    direction = normalize(-supportPoint);
+
+    for(int i = 0; i < 50; i++) {
+        supportPoint = MinkowskiDifference(shapeA, shapeB, direction);
+
+        if (glm::dot(supportPoint, direction) < 0) 
+        {
+            return false;
+        }
+
+        simplex.insert(simplex.begin(), supportPoint);
+
+        if (HandleSimplex(simplex, direction))
+        {
+            std::cout << "Numarul de iteratii: " << i << endl;
+            return true;
+        }
+    }
+
+}
+
+//punctul suport (diferenta dintre cel mai indepartat punct al primei forme intr-o directie si cel mai indepartat punct al celei de-a doua forma in opusul directiei)
+glm::vec3 GPGPU::MinkowskiDifference(Shape a, Shape b, glm::vec3 direction) 
+{
+    return SupportShape(a, direction) - SupportShape(b, -direction);
 }
 
 Texture2D* GPGPU::LoadTexture(const char* imagePath)
@@ -397,11 +683,31 @@ void GPGPU::FrameStart()
 void GPGPU::Update(float deltaTimeSeconds)
 
 {
+
     for each(const auto& shape in shapes)
     {
         SpawnShape(shape);
     }
     UpdateShapes();
+
+    if (testMoving && shapes.size() >= 2)
+    {
+        Shape& first = shapes[0];
+        Shape& second = shapes[1];
+
+        const float testSpeed = 0.5f;               
+        first.centerPosition.x += testSpeed * deltaTimeSeconds;
+
+        bool touching = GJK(first, second);
+
+        if (touching && !testWasTouching)
+        {
+            std::cout << "cuburile s au atins" << std::endl;
+            testMoving = false;                     
+        }
+        testWasTouching = touching;
+    }
+
 
 
     //cub
@@ -593,7 +899,7 @@ void GPGPU::OnKeyPress(int key, int mods)
         Shape newShape("sphere", glm::vec3(rand() % bigCubeLength - bigCubeLength / 2, bigCubeLength / 2, rand() % bigCubeLength - bigCubeLength / 2), 1, glm::vec3(0, 0, 0), 1);
 		shapes.push_back(newShape);
 		printf("Spawned sphere at position (%.2f, %.2f, %.2f)\n", newShape.centerPosition.x, newShape.centerPosition.y, newShape.centerPosition.z); 
-	}
+    }
 	// Spawn cylinder within big cube
     if (key == GLFW_KEY_3)
     {
@@ -655,6 +961,10 @@ void GPGPU::OnKeyPress(int key, int mods)
         shapes.clear();
         printf("Cleared all shapes\n");
 	}
+    if (key == GLFW_KEY_A)
+    {
+        testMoving = true;
+    }
 }
 
 

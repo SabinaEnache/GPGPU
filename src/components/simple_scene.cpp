@@ -43,10 +43,10 @@ void SimpleScene::InitResources()
     camera = new Camera();
     camera->SetPerspective(60, window->props.aspectRatio, 0.01f, 200);
     camera->m_transform->SetMoveSpeed(2);
-    camera->m_transform->SetWorldPosition(glm::vec3(0, 0, 30));
-    camera->m_transform->SetWorldRotation(glm::vec3(0, 0, 0));
-    //camera->m_transform->SetWorldPosition(glm::vec3(0, 1.6f, 2.5));
-    //camera->m_transform->SetWorldRotation(glm::vec3(-15, 0, 0));
+    //camera->m_transform->SetWorldPosition(glm::vec3(0, 0, 30));
+    //camera->m_transform->SetWorldRotation(glm::vec3(0, 0, 0));
+    camera->m_transform->SetWorldPosition(glm::vec3(2, -8.6f, 2.5));
+    camera->m_transform->SetWorldRotation(glm::vec3(-15, 0, 0));
     camera->Update();
 
     cameraInput = new CameraInput(camera);

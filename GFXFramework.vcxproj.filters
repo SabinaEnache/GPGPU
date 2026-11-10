@@ -121,6 +121,12 @@
     <ClCompile Include="src\lab\GPGPU\GPGPU.cpp">
       <Filter>src\lab\GPGPU</Filter>
     </ClCompile>
+    <ClCompile Include="src\lab\GPGPU\physics.cpp">
+      <Filter>src\lab\GPGPU</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lab\GPGPU\Shape.cpp">
+      <Filter>src\lab\GPGPU</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\Combine.comp.glsl">
@@ -481,6 +487,12 @@
       <Filter>src\utils</Filter>
     </ClInclude>
     <ClInclude Include="src\lab\GPGPU\GPGPU.h">
+      <Filter>src\lab\GPGPU</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lab\GPGPU\physics.h">
+      <Filter>src\lab\GPGPU</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lab\GPGPU\Shape.h">
       <Filter>src\lab\GPGPU</Filter>
     </ClInclude>
   </ItemGroup>

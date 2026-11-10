@@ -35,6 +35,16 @@ namespace lab
         void ShowFramerate();
 		void UpdateShapes();
 
+        //gjk
+        glm::vec3 TripleProduct(glm::vec3 A, glm::vec3 B, glm::vec3 C);
+        glm::vec3 SupportShape(Shape shape, glm::vec3 direction);
+        glm::vec3 MinkowskiDifference(Shape a, Shape b, glm::vec3 direction);
+        bool LineCase(std::vector<glm::vec3>& simplex, glm::vec3& direction);
+        bool TriangleCase(std::vector<glm::vec3>& simplex, glm::vec3& direction);
+        bool TetrahedronCase(std::vector<glm::vec3>& simplex, glm::vec3& direction);
+        bool HandleSimplex(std::vector<glm::vec3>& simplex, glm::vec3& direction);
+        bool GJK(Shape shapeA, Shape shapeB);
+
         void OnInputUpdate(float deltaTime, int mods) override;
         void OnKeyPress(int key, int mods) override;
         void OnKeyRelease(int key, int mods) override;
@@ -59,6 +69,12 @@ namespace lab
         double lastTime;
         int nbFrames;
 
+        Shape newShape1;
+        
+        Shape newShape2;
 
+
+        std::vector<glm::vec3> simplex;
+        glm::vec3 direction;
     };
 }   // namespace lab

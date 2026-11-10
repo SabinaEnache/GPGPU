@@ -621,6 +621,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\InitialSpectrum.comp.glsl" />
     <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\TimeEvolution.comp.glsl" />
     <ClCompile Include="src\lab\GPGPU\GPGPU.cpp" />
+    <ClCompile Include="src\lab\GPGPU\physics.cpp" />
+    <ClCompile Include="src\lab\GPGPU\Shape.cpp" />
     <ClCompile Include="src\lab\proiect3v2\proiect3v2.cpp">
       <ObjectFileName>$(IntDir)/src/lab/proiect3v2/proiect3.cpp.obj</ObjectFileName>
     </ClCompile>
@@ -731,6 +733,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\OceanVS.glsl" />
     <ClInclude Include="D:\proiecte-pga\src\lab\proiect3\shaders\VertexShader.glsl" />
     <ClInclude Include="src\lab\GPGPU\GPGPU.h" />
+    <ClInclude Include="src\lab\GPGPU\physics.h" />
+    <ClInclude Include="src\lab\GPGPU\Shape.h" />
     <ClInclude Include="src\lab\proiect3v2\proiect3v2.h" />
     <ClInclude Include="D:\proiecte-pga\src\lab\proiect3v2\shaders\FragmentShader.glsl" />
     <ClInclude Include="D:\proiecte-pga\src\lab\proiect3v2\shaders\OceanFS.glsl" />
